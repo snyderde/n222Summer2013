@@ -32,10 +32,10 @@
 
 					//38 = up
 					//40 = down
-					if(e.which == 38) {
+					if(e.which == 37) {
 						cur_row --;
 						show_row();
-					} else if (e.which == 40) {
+					} else if (e.which == 39) {
 						cur_row ++;
 						show_row();
 					}
@@ -58,6 +58,8 @@
 					rows.animate(
 						{
 							opacity: 0
+							
+							
 						}, 
 						700
 					);
@@ -75,10 +77,12 @@
 					var targChildren = targRow.children();
 
 					for(var i = 0; i < targChildren.length; i++) {
-						$(targChildren[i]).css("opacity", 0).css("marginTop", 0).delay(500 + 500 * i).animate(
+						$(targChildren[i]).css("opacity", 0).css("marginTop", 0).css("width", 0).css("height", 0).delay(500 + 500 * i).animate(
 							{
 								opacity: 1,
-								marginTop: 7
+								marginTop: 7,
+								width: 150,
+								height: 150
 							},
 							700
 						)
